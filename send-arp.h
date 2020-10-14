@@ -15,7 +15,6 @@
 #define Ethhdr_Len 14
 #define Arphdr_Len 28
 
-uint32_t parse_ip(char* addr);
 void get_attacker_ip(char* ipaddr,  char* dev);
 void get_attacker_mac(char* macaddr, char* dev);
 void check_sender_mac(char* senderip, char* sendermac, char* attip, char* attmac, pcap_t* handle);

@@ -9,16 +9,6 @@ struct EthArpPacket {
 };
 #pragma pack(pop)
 
-uint32_t parse_ip(char* addr) {
-    unsigned int a, b, c, d;
-    int res = sscanf(addr, "%u.%u.%u.%u", &a, &b, &c, &d);
-	if (res != 4) {
-		fprintf(stderr, "Ip scan error!return %d r=%s\n", res, addr);
-		return -1;
-	}
-	return (a << 24) | (b << 16) | (c << 8) | d;
-}
-
 void get_attacker_ip(char* ipaddr,  char* dev) {
     int sock = socket(AF_INET, SOCK_DGRAM, 0);
 	struct ifreq ifr;
